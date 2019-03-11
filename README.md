@@ -115,6 +115,11 @@ $ docker rmi -f image_name
 $ docker rm ti_mad
 ```
 
+## remove untaged images <none>
+ ```sh
+ docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)
+```
+ 
 ## Docker log
 ```sh
 $ docker logs container_name -f
