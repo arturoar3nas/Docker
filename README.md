@@ -33,6 +33,18 @@ $ sudo service docker stop
 $ sudo service docker start 
 ```
 
+## Issue II
+
+error with dnf install
+
+if getenforce => Enforcing, 
+then 
+```sh
+   sudo setenforce 0
+```
+validate with :
+getenforce (should be Permisive)
+
 ## Docker File Example I C++
 ```sh
 # Get the base Ubuntu image from Docker Hub
