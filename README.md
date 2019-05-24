@@ -20,7 +20,10 @@ $ docker stop my_container
 ```sh
 $ docker run -it -d --network host --name container_name image_name bash
 ```
-
+another example
+```sh
+$ docker run -it -d -p 5000:5000 -v /root/Molduras/MCA:/usr/src/mca -v /root/Molduras/MCA_Test:/usr/src/app/ --network host --name mca_test_dev mca_test bash
+```
 
 ## Issue
 
