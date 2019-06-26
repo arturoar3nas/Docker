@@ -24,6 +24,10 @@ another example
 ```sh
 $ docker run -it -d -p 5000:5000 -v /root/Molduras/MCA:/usr/src/mca -v /root/Molduras/MCA_Test:/usr/src/app/ --network host --name mca_test_dev mca_test bash
 ```
+run with GDB
+```sh
+docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /root/Molduras/MCA_DEV:/root/mca --network host --name molduras_mca_gdb molduras_mca_dev bash
+```
 
 ## Issue
 
