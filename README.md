@@ -28,6 +28,10 @@ run with GDB
 ```sh
 docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /root/Molduras/MCA_DEV:/root/mca --network host --name molduras_mca_gdb molduras_mca_dev bash
 ```
+run with shared memory boost
+```sh
+docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /home/arturo/Projects/Pyro/pyro_stream:/root/dev --network host --ipc=host --name pyro_stream_dev_1 pyro_stream_dev bash
+```
 
 ## Issue
 
