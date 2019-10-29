@@ -147,3 +147,10 @@ $ docker rm ti_mad
 ```sh
 $ docker logs container_name -f
 ```
+
+## Docker Save Container
+```sh
+$ docker commit name_container_ name_container:1.0.1
+$ docker save -o name_container.tar name_container:1.0.1
+```
+
