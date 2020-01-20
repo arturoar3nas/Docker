@@ -153,4 +153,8 @@ $ docker logs container_name -f
 $ docker commit name_container_ name_container:1.0.1
 $ docker save -o name_container.tar name_container:1.0.1
 ```
-
+## Cpu setup
+```sh
+$ docker update --cpus 16.0 <container_name>
+$ docker update --cpuset-cpus "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" <container_name>
+```
