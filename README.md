@@ -117,6 +117,10 @@ Now run the build command. This creates a Docker image, which we’re going to n
 $ docker build --tag=friendlyhello .
 ```
 
+```sh
+$ docker build -f Dockerfile_ -t my_ .
+```
+
 ## list images
 
 ```sh
