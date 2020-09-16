@@ -157,6 +157,11 @@ $ docker logs container_name -f
 $ docker commit name_container_ name_container:1.0.1
 $ docker save -o name_container.tar name_container:1.0.1
 ```
+
+## Docker Load Image
+```sh
+$ docker load < name_image.tar.gz
+```
 ## Cpu setup
 ```sh
 $ docker update --cpus 16.0 <container_name>
