@@ -1,5 +1,11 @@
 # Docker
 
+## Fast run
+
+```sh
+$ docker run -it --rm fedora bash
+```
+
 ## Netoworking
 
 ```sh
