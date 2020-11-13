@@ -173,3 +173,25 @@ $ docker load < name_image.tar.gz
 $ docker update --cpus 16.0 <container_name>
 $ docker update --cpuset-cpus "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" <container_name>
 ```
+
+## Docker - Shared memory pool
+
+There should be one, "main", container that shares his memory pool, and others, "secondary", containers that use the same memory pool, in order to allow these to share the same pool (boost shared memory).
+
+Example:
+* Main container
+
+```
+#!bash
+
+docker run -it --name serverSharedMem -v $(pwd):/root/test/:z sharedmemdocker bash
+```
+
+
+* Secondary container
+
+```
+#!bash
+
+docker run -it --name clientSharedMem -v $(pwd):/root/test/:z --ipc="container:serverSharedMem" sharedmemdocker bash
+```
