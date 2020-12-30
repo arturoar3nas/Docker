@@ -2,7 +2,7 @@
 
 ## Fast run
 
-```sh
+```docker
 $ docker run -it --rm fedora bash
 ```
 
