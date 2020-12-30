@@ -6,6 +6,12 @@
 $ docker run -it --rm fedora bash
 ```
 
+## Fast exec command
+
+```sh 
+docker exec thirsty_shtern rabbitmqadmin get queue=amq.gen-9PxMO4kJaypRp5lgVKEIIw ackmode=ack_requeue_true count=10
+```
+
 ## Netoworking
 
 ```sh
