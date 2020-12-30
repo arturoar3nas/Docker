@@ -201,3 +201,10 @@ docker run -it --name serverSharedMem -v $(pwd):/root/test/:z sharedmemdocker ba
 
 docker run -it --name clientSharedMem -v $(pwd):/root/test/:z --ipc="container:serverSharedMem" sharedmemdocker bash
 ```
+
+## Using Rabbitmq
+
+```sh
+docker exec thirsty_shtern rabbitmqctl set_log_level debug
+docker logs --tail 40 -f  thirsty_shtern
+```
