@@ -36,6 +36,11 @@ another example
 ```sh
 $ docker run -it -d -p 5000:5000 -v /root/Molduras/MCA:/usr/src/mca -v /root/Molduras/MCA_Test:/usr/src/app/ --network host --name mca_test_dev mca_test bash
 ```
+
+GDB + change work dir + add volumenes
+```
+docker run -it -d -w /root/dev -v /mnt/dev:/root/dev  -v /mnt/videos:/var/videos -v /etc/path:/etc/path --network host -w /root/dev --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name container_dev container_dev:latest bash
+```
 run with GDB
 ```sh
 docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /root/Molduras/MCA_DEV:/root/mca --network host --name molduras_mca_gdb molduras_mca_dev bash
