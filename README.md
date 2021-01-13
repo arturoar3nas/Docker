@@ -23,6 +23,16 @@ $ docker run -it -d -p 80 conatiner-id
 $ docker exec -it [container-id] bash
 ```
 
+## Add volume to container for debug purpose
+```sh
+$ docker rename container_name container_name_dev
+$ docker ps -a
+$ docker inspect container_name_dev
+$ docker commit <hash> container_name_image
+$ docker images
+$ docker run -it -d -w /root/dev -v /mnt/some_name:/root/dev  -v /mnt/videos:/var/videos -v /etc/some_config:/etc/some_config --network host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name container_name_dev pyro_recorder_image:latest bash
+```
+
 ## Docker Stop
 ```sh
 $ docker stop my_container
