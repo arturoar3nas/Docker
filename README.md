@@ -164,6 +164,13 @@ $ docker ps
 $ docker rmi -f image_name
 ```
 
+## cleaning images by date
+```sh
+$ docker images --format 'table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}'
+$ docker image prune -a --filter "until=2020-09-07T00:00:00"
+
+```
+
 ## remove a container
 ```sh
 $ docker rm ti_mad
