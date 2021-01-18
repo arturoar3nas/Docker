@@ -38,6 +38,11 @@ $ docker run -it -d -w /root/dev -v /mnt/some_name:/root/dev  -v /mnt/videos:/va
 $ docker stop my_container
 ```
 
+## Docker Stop All
+```sh
+$ docker stop $(docker ps -q)
+```
+
 ## Run Container
 ```sh
 $ docker run -it -d --network host --name container_name image_name bash
