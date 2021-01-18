@@ -164,6 +164,11 @@ $ docker ps
 $ docker rmi -f image_name
 ```
 
+## remove image by tag
+```sh
+$ docker rmi $(docker images | grep tag | tr -s ' ' | cut -d ' ' -f 3)
+```
+
 ## cleaning images by date
 ```sh
 $ docker images --format 'table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedAt}}\t{{.Size}}'
