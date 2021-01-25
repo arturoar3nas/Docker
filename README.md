@@ -164,6 +164,10 @@ $ docker image ls
 $ docker ps
 ```
 
+## Removing all stopped containers #
+```
+$ docker container prune
+```
 ## remove a image
 ```sh
 $ docker rmi -f image_name
