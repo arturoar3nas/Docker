@@ -253,3 +253,9 @@ docker run -it --name clientSharedMem -v $(pwd):/root/test/:z --ipc="container:s
 docker exec thirsty_shtern rabbitmqctl set_log_level debug
 docker logs --tail 40 -f  thirsty_shtern
 ```
+
+## Using pgadmin4
+
+```sh
+docker run -it --rm  -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' -p 8888:80  dpage/pgadmin4 bash
+```
