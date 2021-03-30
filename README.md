@@ -39,7 +39,7 @@ $ docker ps -a
 $ docker inspect container_name_dev
 $ docker commit <hash> container_name_image
 $ docker images
-$ docker run -it -d -w /root/dev -v /mnt/some_name:/root/dev  -v /mnt/videos:/var/videos -v /etc/some_config:/etc/some_config --network host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name container_name_dev pyro_recorder_image:latest bash
+$ docker run -it -d -w /root/dev -v /mnt/some_name:/root/dev  -v /mnt/videos:/var/videos -v /etc/some_config:/etc/some_config --network host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --name container_name container_image:latest bash
 ```
 
 ## Docker Stop
@@ -58,7 +58,7 @@ $ docker run -it -d --network host --name container_name image_name bash
 ```
 another example
 ```sh
-$ docker run -it -d -p 5000:5000 -v /root/Molduras/MCA:/usr/src/mca -v /root/Molduras/MCA_Test:/usr/src/app/ --network host --name mca_test_dev mca_test bash
+$ docker run -it -d -p 5000:5000 -v /root/somepath:/usr/src/anotherpath -v /root/somepath:/usr/src/anotherpath --network host --name container_name container_image bash
 ```
 
 GDB + change work dir + add volumenes
@@ -67,11 +67,11 @@ docker run -it -d -w /root/dev -v /mnt/dev:/root/dev  -v /mnt/videos:/var/videos
 ```
 run with GDB
 ```sh
-docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /root/Molduras/MCA_DEV:/root/mca --network host --name molduras_mca_gdb molduras_mca_dev bash
+docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /root/somepath:/root/anotherpath --network host --name container_name container_image bash
 ```
 run with shared memory boost
 ```sh
-docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /home/arturo/Projects/Pyro/pyro_stream:/root/dev --network host --ipc=host --name pyro_stream_dev_1 pyro_stream_dev bash
+docker run -it -d --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v /home/somepath:/root/dev --network host --ipc=host --name container_name container_image bash
 ```
 
 ## Issue
