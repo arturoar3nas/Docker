@@ -182,6 +182,11 @@ $ docker container prune
 $ docker rmi -f image_name
 ```
 
+## remove container by some name
+```sh
+$ docker rm $(docker ps -a --filter name='container_name_')
+```
+
 ## remove image by tag
 ```sh
 $ docker rmi $(docker images | grep tag | tr -s ' ' | cut -d ' ' -f 3)
