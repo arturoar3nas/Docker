@@ -1,5 +1,11 @@
 # Docker
 
+## Docker Compose notes:
+
+```sh
+$ docker-compose up -d --no-deps --force-recreate web
+```
+
 ## Issue
 
 cgroups: cgroup mountpoint does not exist: unknown
